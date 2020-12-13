@@ -13,6 +13,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.brown[400],
         elevation: 0,
         actions: <Widget>[
+          // log out button
           FlatButton.icon(
             label: Text('Log out'),
             icon: Icon(Icons.person),
