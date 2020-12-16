@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:brew_crew_new/models/brew.dart';
 import 'package:flutter/material.dart';
 import 'package:brew_crew_new/services/auth.dart';
 import 'package:brew_crew_new/services/database.dart';
@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
+    return StreamProvider<List<Brew>>.value(
       value: DatabaseService().brews,
       catchError: (_,err)=>null, // catch error, self supplemented code for 'no catchError'
         child: Scaffold(
