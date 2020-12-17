@@ -1,4 +1,5 @@
 import 'package:brew_crew_new/models/brew.dart';
+import 'package:brew_crew_new/screens/home/settings_form.dart';
 import 'package:flutter/material.dart';
 import 'package:brew_crew_new/services/auth.dart';
 import 'package:brew_crew_new/services/database.dart';
@@ -11,17 +12,16 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+
+    // bottom sheet of settings 
     void _showSettingsPanel() {
       showModalBottomSheet(context: context, builder: (context){
         return Container(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
-          child: Text('bottom sheet'),
+          child: SettingsForm(),
         );
       });
     }
-
-
-
 
 
 
@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
             // setting button
             FlatButton.icon(
               icon: Icon(Icons.settings),
-              label: Text('settings'),
+              label: Text('Settings'),
               onPressed: () => _showSettingsPanel(),
 
             ),
@@ -54,7 +54,6 @@ class Home extends StatelessWidget {
               },
             ),
 
-            
 
           ],
         ),
